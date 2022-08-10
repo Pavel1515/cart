@@ -5,16 +5,18 @@ import {
   setActive,
   setCaount,
 } from "../redux/Slice/activeIndexSlice";
-import { useState } from "react";
-import { useRef } from "react";
-const Cart = () => {
-  const [act,setAct] = useState(false)
-  const ref = useRef()
+import React, { useState } from "react";
+
+
+
+
+const Cart:React.FC <Cart>= () => {
+  const [act, setAct] = useState(false);
   const image = ["image 2.png", "image 3.png", "image 4.png"];
   const circle = ["red", "blue", "yellow"];
-  const imageBig = useSelector((state) => state.active.imageBig);
-  const active = useSelector((state) => state.active.active);
-  const count = useSelector((state) => state.active.count);
+  const imageBig :number= useSelector((state) => state.active.imageBig);
+  const active:number = useSelector((state) => state.active.active);
+  const count:number = useSelector((state) => state.active.count);
   const dispatch = useDispatch();
   return (
     <div className="container">
@@ -26,21 +28,33 @@ const Cart = () => {
           <p>{count}</p>
         </div>
       </header>
-      {act&&(<div onClick={()=>{
-        setAct(false)
-      }} className="close">
-        <img src="./close.svg" alt="" />
-      </div>)}
+      {act && (
+        <div
+          onClick={() => {
+            setAct(false);
+          }}
+          className="close"
+        >
+          <img src="./close.svg" alt="" />
+        </div>
+      )}
       <div className="container_cart">
         <div className="slider">
-          <div className={act?"big_img bin":"big_img"}>
-            <img ref={ref} onClick={()=>{setAct(true)}} className="big " src={"./" + image[imageBig]} alt="" />
+          <div className={act ? "big_img bin" : "big_img"}>
+            <img
+              onClick={() => {
+                setAct(true);
+              }}
+              className="big "
+              src={"./" + image[imageBig]}
+              alt=""
+            />
           </div>
 
-          <div className={act?"mini_slider bin":"mini_slider"}>
+          <div className={act ? "mini_slider bin" : "mini_slider"}>
             {image.map((el, index) => (
               <img
-              key={index}
+                key={index}
                 onClick={() => {
                   dispatch(setImageBig(index));
                   dispatch(setActive(index));
@@ -60,7 +74,7 @@ const Cart = () => {
             <p>Цвет:</p>
             {circle.map((el, index) => (
               <div
-              key={index}
+                key={index}
                 onClick={() => {
                   dispatch(setImageBig(index));
                   dispatch(setActive(index));

@@ -214,13 +214,13 @@ header {
   position: absolute;
   left: 40%;
 }
-.close{
+.close {
   position: relative;
 }
-.close img{
+.close img {
   z-index: 100;
-  position:absolute;
-  top:-70px;
+  position: absolute;
+  top: -70px;
   cursor: pointer;
   right: 100px;
   width: 80px;
