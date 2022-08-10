@@ -17,11 +17,11 @@ const Cart = () => {
   const count = useSelector((state) => state.active.count);
   const dispatch = useDispatch();
   return (
-    <div class="container">
+    <div className="container">
       <header>
         <img src="./Vector.svg" alt="" />
         <h1>Nike Air Force Travis Scott</h1>
-        <div class="mini_cart">
+        <div className="mini_cart">
           <img src="./corzina.png" alt="" />
           <p>{count}</p>
         </div>
@@ -31,77 +31,79 @@ const Cart = () => {
       }} className="close">
         <img src="./close.svg" alt="" />
       </div>)}
-      <div class="container_cart">
-        <div class="slider">
+      <div className="container_cart">
+        <div className="slider">
           <div className={act?"big_img bin":"big_img"}>
-            <img ref={ref} onClick={()=>{setAct(true)}} class="big " src={"./" + image[imageBig]} alt="" />
+            <img ref={ref} onClick={()=>{setAct(true)}} className="big " src={"./" + image[imageBig]} alt="" />
           </div>
 
-          <div class={act?"mini_slider bin":"mini_slider"}>
+          <div className={act?"mini_slider bin":"mini_slider"}>
             {image.map((el, index) => (
               <img
+              key={index}
                 onClick={() => {
                   dispatch(setImageBig(index));
                   dispatch(setActive(index));
                 }}
-                class={active === index ? "active" : ""}
+                className={active === index ? "active" : ""}
                 src={"./" + el}
                 alt="img"
               />
             ))}
           </div>
         </div>
-        <div class="cart_interfece">
-          <h2 class="price">
+        <div className="cart_interfece">
+          <h2 className="price">
             12000 <span> ₽</span>
           </h2>
-          <div class="color">
+          <div className="color">
             <p>Цвет:</p>
             {circle.map((el, index) => (
               <div
+              key={index}
                 onClick={() => {
                   dispatch(setImageBig(index));
                   dispatch(setActive(index));
                 }}
-                class={el}
+                className={el}
               ></div>
             ))}
           </div>
-          <div class="bay_container">
-            <div class="add_count">
+          <div className="bay_container">
+            <div className="add_count">
               <div
                 onClick={() => {
                   if (count > 1) dispatch(setCaount(count - 1));
                 }}
-                class="minus"
+                className="minus"
               >
                 <span>-</span>
               </div>
-              <div class="caunt">
+              <div className="caunt">
                 <span>{count}</span>
               </div>
               <div
                 onClick={() => {
                   dispatch(setCaount(count + 1));
                 }}
-                class="plus"
+                className="plus"
               >
                 <span>+</span>
               </div>
             </div>
-            <p class="onOne">Купить в 1 клик</p>
-            <div class="v_cart">
+            <p className="onOne">Купить в 1 клик</p>
+            <div className="v_cart">
               <img src="./corzina.png" alt="" />
               <p>В корзину</p>
             </div>
           </div>
-          <div class="information">
-            <div class="menu_information">
-              <div class="menu">Описание</div>
-              <div class="menu">Характеристики</div>
-              <div class="menu">Отзывы</div>
+          <div className="information">
+            <div className="menu_information">
+              <div className="menu">Описание</div>
+              <div className="menu">Характеристики</div>
+              <div className="menu">Отзывы</div>
             </div>
-            <div class="inform">
+            <div className="inform">
               <p>Категория</p>
               <p>Кросовки</p>
               <p>Производитель</p>
