@@ -17,13 +17,14 @@ header {
   width: 50%;
 }
 .big_img {
+  position: relative;
   width: 100%;
   height: 293px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.big_img img {
+.big_img .big {
   width: 208px;
   height: 234px;
 }
@@ -193,4 +194,35 @@ header {
 }
 .price span {
   font-size: 20px;
+}
+.bin {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  min-width: 100%;
+  min-height: 100%;
+}
+.bin .big {
+  transition: 20ms;
+  border: 1px solid blue;
+  width: 900px;
+  height: 900px;
+}
+
+.mini_slider .bin {
+  position: absolute;
+  left: 40%;
+}
+.close{
+  position: relative;
+}
+.close img{
+  z-index: 100;
+  position:absolute;
+  top:-70px;
+  cursor: pointer;
+  right: 100px;
+  width: 80px;
+  height: 80px;
 }

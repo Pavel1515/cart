@@ -5,7 +5,11 @@ import {
   setActive,
   setCaount,
 } from "../redux/Slice/activeIndexSlice";
+import { useState } from "react";
+import { useRef } from "react";
 const Cart = () => {
+  const [act,setAct] = useState(false)
+  const ref = useRef()
   const image = ["image 2.png", "image 3.png", "image 4.png"];
   const circle = ["red", "blue", "yellow"];
   const imageBig = useSelector((state) => state.active.imageBig);
@@ -22,13 +26,18 @@ const Cart = () => {
           <p>{count}</p>
         </div>
       </header>
+      {act&&(<div onClick={()=>{
+        setAct(false)
+      }} className="close">
+        <img src="./close.svg" alt="" />
+      </div>)}
       <div class="container_cart">
         <div class="slider">
-          <div class="big_img">
-            <img class="big" src={"./" + image[imageBig]} alt="" />
+          <div className={act?"big_img bin":"big_img"}>
+            <img ref={ref} onClick={()=>{setAct(true)}} class="big " src={"./" + image[imageBig]} alt="" />
           </div>
 
-          <div class="mini_slider">
+          <div class={act?"mini_slider bin":"mini_slider"}>
             {image.map((el, index) => (
               <img
                 onClick={() => {
