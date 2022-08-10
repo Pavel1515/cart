@@ -1,0 +1,23 @@
+header{
+    display: flex;
+    justify-content:space-between ;
+}
+.container_cart{
+    display: flex;
+}
+.slider{
+    width: 50%;
+}
+.cart{
+    width: 50%;
+}
+.cartmin{
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    margin-left: 3px;
+}
+.cartmin:hover{
+    border-radius: 4px;
+    border: 1px solid black;
+}
