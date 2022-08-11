@@ -164,6 +164,7 @@ header {
 .inform {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 .inform li{
   list-style: none;
