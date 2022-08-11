@@ -8,7 +8,6 @@ import {
 } from "../redux/Slice/activeIndexSlice";
 import { useState } from "react";
 
-import type { CartSlise } from "../redux/Slice/activeIndexSlice";
 
 const Cart: React.FC = () => {
   const [act, setAct] = useState(false);
