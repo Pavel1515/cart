@@ -1,5 +1,6 @@
+import React from "react";
 import "./style.css";
-import { useDispatch, useSelector} from "react-redux";
+import { useAppDispatch, useAppSelector } from "../redux/store";
 import {
   setImageBig,
   setActive,
@@ -7,17 +8,16 @@ import {
 } from "../redux/Slice/activeIndexSlice";
 import { useState } from "react";
 
+import type { CartSlise } from "../redux/Slice/activeIndexSlice";
 
-
-
-const Cart = () => {
+const Cart: React.FC = () => {
   const [act, setAct] = useState(false);
   const image = ["image 2.png", "image 3.png", "image 4.png"];
   const circle = ["red", "blue", "yellow"];
-  const imageBig = useSelector((state) => state.active.imageBig);
-  const active = useSelector((state) => state.active.active);
-  const count = useSelector((state) => state.active.count);
-  const dispatch = useDispatch();
+  const imageBig = useAppSelector((state) => state.active.imageBig);
+  const active = useAppSelector((state) => state.active.active);
+  const count = useAppSelector((state) => state.active.count);
+  const dispatch = useAppDispatch;
   return (
     <div className="container">
       <header>
