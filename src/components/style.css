@@ -233,8 +233,8 @@ header {
 }
 @media (max-width:1150px) {
   .container{
-    min-width: 80%;
-    max-width: 80%;
+    min-width: 90%;
+    max-width: 90%;
   }
 }
 @media (max-width:900px) {
