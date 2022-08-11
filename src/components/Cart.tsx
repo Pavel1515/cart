@@ -17,7 +17,7 @@ const Cart: React.FC = () => {
   const imageBig = useAppSelector((state) => state.active.imageBig);
   const active = useAppSelector((state) => state.active.active);
   const count = useAppSelector((state) => state.active.count);
-  const dispatch = useAppDispatch;
+  const dispatch = useAppDispatch();
   return (
     <div className="container">
       <header>
