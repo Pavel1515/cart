@@ -1,22 +1,22 @@
 import "./style.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import {
   setImageBig,
   setActive,
   setCaount,
 } from "../redux/Slice/activeIndexSlice";
-import React, { useState } from "react";
+import { useState } from "react";
 
 
 
 
-const Cart:React.FC <Cart>= () => {
+const Cart = () => {
   const [act, setAct] = useState(false);
   const image = ["image 2.png", "image 3.png", "image 4.png"];
   const circle = ["red", "blue", "yellow"];
-  const imageBig :number= useSelector((state) => state.active.imageBig);
-  const active:number = useSelector((state) => state.active.active);
-  const count:number = useSelector((state) => state.active.count);
+  const imageBig = useSelector((state) => state.active.imageBig);
+  const active = useSelector((state) => state.active.active);
+  const count = useSelector((state) => state.active.count);
   const dispatch = useDispatch();
   return (
     <div className="container">
@@ -118,12 +118,18 @@ const Cart:React.FC <Cart>= () => {
               <div className="menu">Отзывы</div>
             </div>
             <div className="inform">
-              <p>Категория</p>
-              <p>Кросовки</p>
-              <p>Производитель</p>
-              <p>Nike</p>
-              <p>Гарантия</p>
-              <p>2 года</p>
+              <ul className="categori_inform">
+                <li>Категория</li>
+                <li>Производитель</li>
+                <li>Бренд</li>
+                <li>Гарантия</li>
+              </ul>
+              <ul className="significance_inform">
+                <li>Кросовки</li>
+                <li>Производитель</li>
+                <li>Nike</li>
+                <li>2 года</li>
+              </ul>
             </div>
           </div>
         </div>
