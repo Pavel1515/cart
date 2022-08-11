@@ -1,4 +1,4 @@
-import { createSlice,PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 export type CartSlise = {
   imageBig: number;
@@ -16,21 +16,13 @@ export const activateIndexSlice = createSlice({
   name: "active",
   initialState,
   reducers: {
-<<<<<<< HEAD
-<<<<<<< HEAD
-    setImageBig: (state, action:PayloadAction<number>) => {
-=======
-    setImageBig: (state, action:PayloadAction<string>) => {
->>>>>>> fbec309 (проба Ts)
-=======
-    setImageBig: (state, action:PayloadAction<number>) => {
->>>>>>> f9cf2db (исправил ошибку в TS)
+    setImageBig: (state, action: PayloadAction<number>) => {
       state.imageBig = action.payload;
     },
-    setActive: (state, action:PayloadAction<number>) => {
+    setActive: (state, action: PayloadAction<number>) => {
       state.active = action.payload;
     },
-    setCaount: (state, action:PayloadAction<number>) => {
+    setCaount: (state, action: PayloadAction<number>) => {
       state.count = action.payload;
     },
   },
