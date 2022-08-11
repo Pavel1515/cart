@@ -16,7 +16,7 @@ export const activateIndexSlice = createSlice({
   name: "active",
   initialState,
   reducers: {
-    setImageBig: (state, action:PayloadAction<string>) => {
+    setImageBig: (state, action:PayloadAction<number>) => {
       state.imageBig = action.payload;
     },
     setActive: (state, action:PayloadAction<number>) => {
