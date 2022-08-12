@@ -1,5 +1,5 @@
 import React from "react";
-import "./style.css";
+import "../scss/Cart.scss";
 import { useAppDispatch, useAppSelector } from "../redux/store";
 import {
   setImageBig,
@@ -7,7 +7,6 @@ import {
   setCaount,
 } from "../redux/Slice/activeIndexSlice";
 import { useState } from "react";
-
 
 const Cart: React.FC = () => {
   const [act, setAct] = useState(false);
@@ -20,26 +19,27 @@ const Cart: React.FC = () => {
   return (
     <div className="container">
       <header>
-        <img src="./Vector.svg" alt="" />
+        <img src="./Vector.svg" className="logo" alt="" />
         <h1>Nike Air Force Travis Scott</h1>
         <div className="mini_cart">
           <img src="./corzina.png" alt="" />
           <p>{count}</p>
         </div>
       </header>
-      {act && (
-        <div
-          onClick={() => {
-            setAct(false);
-          }}
-          className="close"
-        >
-          <img src="./close.svg" alt="" />
-        </div>
-      )}
       <div className="container_cart">
         <div className="slider">
           <div className={act ? "big_img bin" : "big_img"}>
+            {act && (
+              <div
+                onClick={() => {
+                  setAct(false);
+                }}
+                className="close"
+              >
+                <img src="./close.svg" alt="" />
+              </div>
+            )}
+            <div className="big_img_container">
             <img
               onClick={() => {
                 setAct(true);
@@ -48,9 +48,11 @@ const Cart: React.FC = () => {
               src={"./" + image[imageBig]}
               alt=""
             />
+            </div>
+           
           </div>
 
-          <div className={act ? "mini_slider bin" : "mini_slider"}>
+          <div className="mini_slider">
             {image.map((el, index) => (
               <img
                 key={index}
@@ -133,6 +135,7 @@ const Cart: React.FC = () => {
           </div>
         </div>
       </div>
+      <p className="version">Версия на TypeScript</p>
     </div>
   );
 };
