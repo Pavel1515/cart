@@ -1,8 +1,8 @@
-@import "./nullstyle.scss";
-@import "./header.scss";
-@import "./slider.scss";
-@import "./cart_interfece.scss";
-@import "./bin_hover.scss";
+@import "./components/nullstyle.scss";
+@import "./components/header.scss";
+@import "./components/slider.scss";
+@import "./components/cart_interfece.scss";
+@import "./components/bin_hover.scss";
 
 .container_cart {
   display: flex;
