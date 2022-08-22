@@ -1,4 +1,15 @@
 import Header from "../Header";
+
+const time = [
+  "-Понедельник с 8:00 по 20:00",
+  "-Вторник с 8:00 по 20:00",
+  "-Среда с 8:00 по 20:00",
+  "-Четверг с 8:00 по 20:00",
+  "-Пятница с 8:00 по 20:00",
+  "-Субота с 8:00 по 20:00",
+  "-Воскресениье с 8:00 по 20:00",
+];
+
 const Contact = () => {
   return (
     <div className=" xl:max-w-screen-xl   min-h-full overflow-y-hidden box-border overflow-x-hidden w-4/5 mx-auto">
@@ -11,13 +22,11 @@ const Contact = () => {
       <p className="text-indigo-300">Самовывоз доступен</p>
       <p className="mx-4">Доставка любыми почтовами службами</p>
       <p className="text-indigo-300">Режим работы</p>
-      <p className="mx-4">-Понедельник с 8:00 по 20:00</p>
-      <p className="mx-4">-Вторник с 8:00 по 20:00</p>
-      <p className="mx-4">-Среда с 8:00 по 20:00</p>
-      <p className="mx-4">-Четверг с 8:00 по 20:00</p>
-      <p className="mx-4">-Пятница с 8:00 по 20:00</p>
-      <p className="mx-4">-Субота с 8:00 по 20:00</p>
-      <p className="mx-4">-Воскресениье с 8:00 по 20:00</p>
+      {time.map((el, index) => (
+        <p key={index} className="mx-4">
+          {el}
+        </p>
+      ))}
       <p className="text-indigo-300">Наш телефон</p>
       <p className="mx-4 text-left text-blue-400 my-4">+373 645464 54 5</p>
       <p className="text-indigo-300">EMAIL</p>

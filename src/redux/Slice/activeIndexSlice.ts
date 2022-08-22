@@ -28,7 +28,7 @@ export const activateIndexSlice = createSlice({
             state.count = action.payload;
         },
         setAct: (state, action) => {
-            state.active = action.payload;
+            state.act = action.payload;
         }
     },
 });
