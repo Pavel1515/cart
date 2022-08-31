@@ -11,7 +11,7 @@ const initialState: CartSlise = {
     act: false,
     imageBig: 0,
     active: 0,
-    count: 1,
+    count: 0,
 };
 
 export const activateIndexSlice = createSlice({
@@ -33,6 +33,6 @@ export const activateIndexSlice = createSlice({
     },
 });
 
-export const {setImageBig, setActive, setCaount,setAct} = activateIndexSlice.actions;
+export const {setImageBig, setActive, setCaount, setAct} = activateIndexSlice.actions;
 
 export default activateIndexSlice.reducer;

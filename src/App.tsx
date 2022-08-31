@@ -1,9 +1,9 @@
-import React from "react";
-import Cart from "./components/Cart";
+import Cart from "./components/pages/Cart";
 import {Route,Routes} from "react-router-dom";
-import Home from "./components/Home";
-import Contact from "./components/Contact";
-import Reviews from "./components/Reviews";
+import Home from "./components/pages/Home";
+import Contact from "./components/pages/Contact";
+import Reviews from "./components/pages/Reviews";
+import Naw from "./components/pages/Naw";
 
 const App = () => {
 
@@ -13,6 +13,7 @@ const App = () => {
           <Route path={'/cart'} element={<Cart/>}/>
           <Route path={'/contact'} element={<Contact/>}/>
           <Route path={'/revies'} element={<Reviews/>}/>
+          <Route path={'/naw'} element={<Naw/>}/>
        </Routes>
       )
 

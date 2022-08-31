@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import active from "./Slice/activeIndexSlice";
+import list from './Slice/listSlice'
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 const store = configureStore({
   reducer: {
     active,
+    list,
   },
 });
 

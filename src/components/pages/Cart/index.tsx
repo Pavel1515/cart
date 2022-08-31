@@ -1,17 +1,17 @@
 import "./style.css";
-import Header from "../Header";
-import { useAppDispatch, useAppSelector } from "../../redux/store";
+import Header from "../../Header";
+import { useAppDispatch, useAppSelector } from "../../../redux/store";
 import {
   setAct,
   setActive,
   setCaount,
   setImageBig,
-} from "../../redux/Slice/activeIndexSlice";
+} from "../../../redux/Slice/activeIndexSlice";
 
-const cort = require("../../assets/img/corzina.png");
-const image2 = require("../../assets/img/image 2.png");
-const image3 = require("../../assets/img/image 3.png");
-const image4 = require("../../assets/img/image 4.png");
+const cort = require("../../../assets/img/corzina.png");
+const image2 = require("../../../assets/img/image 2.png");
+const image3 = require("../../../assets/img/image 3.png");
+const image4 = require("../../../assets/img/image 4.png");
 
 const Cart = () => {
   const dispatch = useAppDispatch();
@@ -97,7 +97,7 @@ const Cart = () => {
         </div>
         <div className=" lg:w-6/12">
           <h2 className="border-8 mx-auto w-3/6 my-10 text-rose-600 text-2xl flex justify-center  items-center h-20   border-cyan-600">
-            12000 <span className="mx-2 text-xl text-emerald-600  "> ₽</span>
+            12000 <span className="mx-2 text-xl text-emerald-600  ">грн</span>
           </h2>
           <div className="my-10  flex justify-center items-center">
             <p>Цвет:</p>
@@ -117,7 +117,7 @@ const Cart = () => {
             <div className="flex justify-center">
               <div
                 onClick={() => {
-                  if (count > 1) dispatch(setCaount(count - 1));
+                  if (count > 0) dispatch(setCaount(count - 1));
                 }}
                 className="w-8 cursor-pointer font-extrabold flex justify-center items-center rounded-l-lg border border-black h-9"
               >
