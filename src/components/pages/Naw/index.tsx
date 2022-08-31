@@ -25,7 +25,7 @@ const Naw: FC = () => {
         {list.length &&
           list.map((obj: listType) => {
             return (
-              <div className="m-12" key={obj.id}>
+              <div className="m-4 sm:m-8" key={obj.id}>
                 <SheakersBlock {...obj} />
               </div>
             );
